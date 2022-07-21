@@ -1,0 +1,33 @@
+.compose-session {
+    /* border: 2px solid darkgreen; */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.compose-mail {
+    /* border:2px solid blue; */
+    height: 15%;
+    width: 100%;
+
+}
+
+.compose-message {
+    /* border:2px solid yellow; */
+    height: 70%;
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+}
+
+.subject-textarea {
+    width: 100%;
+    height: 15%;
+}
+
+.message-textarea {
+    width: 100%;
+    height: 65%;
+}

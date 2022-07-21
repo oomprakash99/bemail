@@ -1,0 +1,23 @@
+<div class="main">
+
+    <div *ngIf="isShow;else hide">
+      <div *ngFor="let obj of importedSentMail" class="mails">
+        <div class="test" (click)="toggleStatus(obj)">
+          <div class="sendername">{{ obj.sender }}</div>
+          <div class="subject">{{ obj.subject }}</div>
+          <button class="delete-btn">Delete</button>
+          <div class="time">{{ obj.time }}</div>
+        </div>
+      </div>
+    </div>
+  
+    <ng-template class="template" #hide>
+    <div>
+      <button class="btn-secondary">Back</button>
+      <button class="btn-secondary">Delete</button>
+    </div>
+      <div class="hidden-Message">
+        {{this.passedMessage}}
+      </div>
+    </ng-template>
+  </div>

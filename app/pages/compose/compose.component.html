@@ -1,0 +1,21 @@
+<div class="compose-session form-group">
+    <p-toast position="top-left"></p-toast>
+        <div class="compose-mail form-control">
+            <label>To:</label>
+            <input type="email" name="email" placeholder="Please enter the email address" style="width:99%;height:50%;"
+                required email [(ngModel)]="composeEmail">
+        </div>
+        <div class="compose-message form-array">
+            <label>Subject:</label>
+            <textarea class="subject-textarea" rows="1" cols="20" name="Subject" placeholder="Subject"
+                [(ngModel)]="composeSubject"></textarea><br>
+            <label>Message:</label>
+            <textarea class="message-textarea" rows="57" cols="100" name="message" [(ngModel)]="composeMessage"
+                placeholder="Enter your message here"></textarea>
+            <br>
+        </div>
+
+        <div class="composesubmit">
+        <button type="submit" class="btn btn-info" (click)="pushData()">Send</button>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="MailboxMain">
+
+    <div class="navbar">
+        <div class="logo">
+            <img class="logoimg" src="/assets/logo.png">
+        </div>
+        <div class="searchbar">
+            <form>
+                <div class="searchinput">
+                    <!-- <button class="btn btn-primary searchbtn">Search</button>
+                    <div class="input-group form-group">
+                        <input class="search form-control" ngModel name="search" placeholder="Search Here">
+                    </div> -->
+                </div>
+            </form>
+        </div>
+        <div class="profile">
+            <img class="dppicture" src="/assets/dplogo.png">
+        </div>
+</div>
+
+<div class="sidebar">
+
+    <div class="sidebar-btn">
+        <button class="btn btn-danger active" data-bs-toggle="button" aria-pressed="true" style="width: 100%;"
+        (click)="selectedCmponent = 'compose'"> + Compose </button>
+    </div>
+
+    <div class="sidebar-btn">
+        <button class="btn btn-primary active" data-bs-toggle="button" aria-pressed="true" style="width: 100%"
+        (click)="selectedCmponent = 'inbox'">Inbox</button>
+    </div>
+
+    <div class="sidebar-btn">
+        <button class="btn btn-primary active" data-bs-toggle="button" aria-pressed="true" style="width: 100%"
+        (click)="selectedCmponent = 'sent'">Sent</button>
+    </div>
+
+    <div class="sidebar-btn">
+        <button class="btn btn-primary active" data-bs-toggle="button" aria-pressed="true" style="width: 100%" 
+        (click)="selectedCmponent = 'trash'">Trash</button>
+    </div>
+
+</div>
+
+<div class="mailbar">
+    <app-compose *ngIf="selectedCmponent == 'compose'"></app-compose>
+    <app-mailList *ngIf="selectedCmponent == 'inbox'" [List]="importedInbox"></app-mailList>
+    <app-mailList *ngIf="selectedCmponent == 'sent'" [List]="importedSent"></app-mailList>
+    <app-mailList *ngIf="selectedCmponent == 'trash'" [List]="importedTrash"></app-mailList>
+</div>

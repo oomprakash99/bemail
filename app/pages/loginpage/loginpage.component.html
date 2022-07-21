@@ -1,0 +1,35 @@
+<div class="login-session">
+    <div class="header">
+        <img class="logo" src="/assets/logo.png">
+    </div>
+
+    <div class="content">
+        <div class="loginlogo"></div>
+        <form [formGroup]="LoginForm">
+            <div class="login">
+                <h2 class="login-header">Login</h2>
+                <div class="username">
+                    <label for="email">Email ID</label>
+                    <input formControlName="email" type="email" id="email" placeholder="Enter your Email"
+                        [(ngModel)]="validUsername" required email>
+                </div>
+
+                <span class="validity-info">Please enter a valid email!</span>
+                
+                <br>
+
+                <div class="password">
+                    <label for="password">Password</label>
+                    <input formControlName="password" type="password" id="password" placeholder="Enter your password" 
+                    [(ngModel)]="validPassword" maxlength="10" required>
+                </div>
+                &nbsp;&nbsp;
+
+                <div class="submit">
+                    <button (click)="login()" type="submit" class="btn btn-info submit-btn">Submit</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
